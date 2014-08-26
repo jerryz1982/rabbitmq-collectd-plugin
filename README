@@ -1,11 +1,16 @@
 This is a rudimentary RabbitMQ plugin for Collectd.  It is written in Python, and thus requires the use of the Python plugin for Collectd.
 
-It will accept 4 options from the Collectd plugin configuration :
+It will accept 7 options from the Collectd plugin configuration :
 
     Locations of binaries:
     RmqcBin = /usr/sbin/rabbitmqctl
     PmapBin = /usr/bin/pmap
     PidFile = /var/run/rabbitmq/pid
+    
+    or API information:
+    Api = http://localhost:15672/api/queues
+    Vhost = /
+    UserPass= guest:guest
 
     Logging:
     Verbose = False
