@@ -58,7 +58,7 @@ def get_stats():
 #            'list_queues', 'name', 'messages', 'memory', 'consumers'],
 #            shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except:
-        logger('err', 'Failed to run curl %s' % RABBITMQ_API)
+        logger('err', 'Failed to run curl %s/%s' % (RABBITMQ_API, VHOST))
         return None
 
 #    for line in p.stdout.readlines():
@@ -80,7 +80,7 @@ def get_stats():
     try:
         resp=json.loads(script_response[7])
     except:
-        logger('err', 'No result found for this queue')
+        logger('err', 'No result found for this vhost')
         return None
     for i in range(0, len(resp)-1):
         stats['ctl_messages'] += resp[i]['messages']
