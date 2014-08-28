@@ -1,6 +1,6 @@
 This is a rudimentary RabbitMQ plugin for Collectd.  It is written in Python, and thus requires the use of the Python plugin for Collectd.
 
-It will accept 7 options from the Collectd plugin configuration :
+It will accept 8 options from the Collectd plugin configuration :
 
     Locations of binaries:
     RmqcBin = /usr/sbin/rabbitmqctl
@@ -10,7 +10,8 @@ It will accept 7 options from the Collectd plugin configuration :
     or API information:
     Api = http://localhost:15672/api/queues
     Vhost = /
-    UserPass= guest:guest
+    User = guest
+    Pass = guest
 
     Logging:
     Verbose = False
@@ -26,6 +27,16 @@ It will attempt to gather the following information:
     memory mapped
     memory writeable/private (used)
     memory shared
+
+There is also a dependency of python library 'requests', which is supposed
+to be installed before using the plugin.
+To install 'requests' libraray:
+Rhel:
+yum install python-requests
+Debian:
+apt-get install python-requests
+Or if you have pip installed:
+pip install requests
 
 The script is licensed using the Apache License, Version 2.0 :
 http://www.apache.org/licenses/LICENSE-2.0

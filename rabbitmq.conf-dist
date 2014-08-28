@@ -8,8 +8,9 @@
     Import "rabbitmq_info"
     <Module rabbitmq_info>
        Vhost "/"
-       Api "http://localhost:15672"
-       UserPass "guest:guest"
+       Api "http://localhost:15672/api/queues"
+       User "guest"
+       Pass "guest"
        #RmqcBin
        #PmapBin
        #PidFile
